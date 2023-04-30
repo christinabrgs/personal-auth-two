@@ -52,18 +52,14 @@ function makeReq(event){
    
         let table = document.getElementById('workoutInfo')
         let td = document.createElement('td')
+        // td.id = exercise
         let icon = document.createElement("i");
+        icon.dataset.exercise = information
 
         icon.setAttribute("class","fa-solid fa-plus")
         const textNode = document.createTextNode(information)
         td.appendChild(textNode)
         table.appendChild(td)
-        // table.appendChild(td).appendChild(
-        //   Object.assign(
-        //     document.createElement("i"), {
-        //       setAttribute: "class: fa-solid fa-plus",
-        //     }
-        //   ))
 
         table.appendChild(icon)
 
@@ -79,7 +75,8 @@ function makeReq(event){
 
 
 function addToFav(){
-  let favorite = this.parentNode.parentNode.childNodes[0].innerText
+  // let favorite = this.parentNode.childNodes[2].innerText
+  let favorite = this.dataset.exercise
   console.log (favorite)
 
   fetch('/favorites', {

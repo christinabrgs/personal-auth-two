@@ -26,8 +26,9 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true }) // client gr
 
     app.post('/favorites', (req, res) => {
       console.log('post', req.body)  
-      db.collection('favorites')
-        .insertOne({favorites: req.body.favorite}, (err, result) => {
+      workoutFavs
+        .insertOne({favorite: req.body.favorite}, (err, result) => {
+          console.log(result)
           if (err) return res.send(err)
           res.send(result)
         })
