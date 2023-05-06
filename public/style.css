@@ -1,7 +1,79 @@
+h1 {
+  font-size: 2em;
+  background: rgb(132, 132, 132);
+  width: 100%;
+  margin: 0 auto;
+  color: white;
+  padding: 20px;
+}
+
 body{
   padding-top:80px;
   word-wrap:break-word;
+  font-family: 'Urbanist', sans-serif;
+  background: rgb(0, 0, 0);
 }
+
+div {
+  background: white;
+}
+
 img{
   height: 200px;
+}
+
+.form-select {
+  width: 40%;
+  height: 40px;
+  margin: 5% auto 0 auto;
+}
+
+.favs {
+  margin: 0% auto;
+}
+
+button {
+  height: 40px;
+  border-style: none;
+  background: none;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.col-sm-12, .col {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  width: 85%;
+  font-size: 1.3em;
+  border: 1px solid lightgray;
+  padding: 5px;
+  margin: 10px;
+  text-align: left;
+}
+
+i {
+  float: right;
+  font-size: .7em;
+  padding-top: 10px;
+  padding-right: 5px;
+  color: black;
+  white: black;
+}
+
+i:hover {
+  color: brown;
+}
+
+img {
+  margin-top: 20%;
+  margin-left: 80px;
+  width: 88%;
+  height: 100%;
+}
+
+.container {
+  padding: 50px;
 }

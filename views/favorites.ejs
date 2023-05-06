@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/47aae21c46.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/profile" class="btn btn-default btn-sm">Home</a>
+    </div>
+
+    <div class="row">
+        <h1 class="text-center">FAVORITES</h1>
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-12">
+            <div class="favs well">
+                
+              <ul class="messages">
+              <% for(let i=0; i<fav.length; i++) {%>
+                <li class="message"><span type="text"><%= fav[i].favorite %> <i class="fa-solid fa-xmark"></i></span></li>
+              <% } %>
+              </ul>
+            </div>
+        </div>
+       
+    </div>
+
+</div>
+
+<script src="fav.js"></script>
+
+</body>
+</html>

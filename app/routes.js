@@ -18,11 +18,14 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true }) // client gr
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, async(req, res) => {
         const fav = await workoutFavs.find().toArray()
-
           // if (err) return console.log(err)
           res.render('profile.ejs', {fav})
+    })
 
-        })
+    app.get('/favorites', isLoggedIn, async(req, res) => {
+      const fav = await workoutFavs.find().toArray()
+      res.render('favorites.ejs', {fav})
+    })
 
     app.post('/favorites', (req, res) => {
       console.log('post', req.body)  
@@ -43,53 +46,16 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true }) // client gr
         res.redirect('/');
     });
 
-// message board routes ===============================================================
-
-    app.post('/messages', (req, res) => {
-      db.collection('messages').save({name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown:0}, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/profile')
-      })
-    })
-
-    app.put('/messages', (req, res) => {
-      db.collection('messages')
-      .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
-        $set: {
-          thumbUp:req.body.thumbUp + 1
-        }
-      }, {
-        sort: {_id: -1},
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-    })
-
-    app.put('/messages/thumbsDown', (req, res) => {
-      db.collection('messages')
-      .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
-        $set: {
-          thumbUp:req.body.thumbUp - 1
-        }
-      }, {
-        sort: {_id: -1},
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-    })
-
-    app.delete('/messages', (req, res) => {
-      db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
+    app.delete('/delete', (req, res) => {
+      db.collection('messages').findOneAndDelete({favorite: req.body.favorite}, (err, result) => {
         if (err) return res.send(500, err)
-        res.send('Message deleted!')
+        res.send('workout deleted!')
       })
     })
   })
+
+// message board routes ===============================================================
+
 
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================

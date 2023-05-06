@@ -5,47 +5,66 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/47aae21c46.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
 
     <div class="page-header text-center">
-        <h1>Profile Page</h1>
+        
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <a href="/favorites" class="btn btn-default btn-sm">Favorites</a>
     </div>
 
     <div class="row">
-
+        <h1 class="text-center">WORKOUT GENERATOR</h1>
         <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+        <div class="col-sm-12"> 
 
+          <select id="muscle" type="text" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected>Select a muscle group</option>
+            <option value="abdominals">abdominals</option>
+            <option value="abductors">abductors</option>
+            <option value="adductors">adductors</option>
+            <option value="calves">calves</option>
+            <option value="chest">chest</option>
+            <option value="forearms">forearms</option>
+            <option value="glutes">glutes</option>
+            <option value="hamstrings">hamstrings</option>
+            <option value="quadriceps">quadriceps</option>
+            <option value="lats">lats</option>
+            <option value="lower_back">lower back</option>
+            <option value="middle_back">middle back</option>
+            <option value="neck">neck</option>
+            <option value="traps">traps</option>
+            <option value="triceps">triceps</option>
+          </select>
 
+          <select id="difficulty" type="text" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option value="beginner">beginner</option>
+            <option value="intermediate">intermediate</option>
+            <option value="expert">expert</option>
+          </select>
 
-            </div>
+          <!-- <input type="text" value=""> -->
+          <button id="results" type="submit">Submit</button>
+
         </div>
-        <div class="col-sm-6">
-          <h3>Favorites</h3>
-          <ul class="messages">
-          <% for(let i=0; i<fav.length; i++) {%>
-            <li class="message">
-              <span><%= fav[i].favorite %></span>
-            </li>
-          <% } %>
+
+
+
+        <div class="col col-sm-5">
+          <img src="">
+        </div>
+        <div class="col col-sm-7">
+          <ul id="workoutInfo">
+            <li></li>
           </ul>
-
-        <input id="muscle" placeholder="enter a muscle group"></input>
-        <button id="results">results</button>
-
-        <table id="workoutInfo">
-          <tr>
-            <td></td>
-          </tr>
-        </table>
-
-
+        </div>
+        
 </div>
 
 <script src="main.js"></script>
