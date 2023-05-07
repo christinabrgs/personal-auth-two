@@ -26,50 +26,65 @@ function makeReq(){
     .then(request => request.json())
 		.then(response => {
       console.log(response)
-        
+
       if (input === 'chest') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'chest.png'
       }
       else if (input === 'hamstrings') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'ham.png'
       }
       else if (input === 'quadrieps') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'quads.png'
       }
       else if (input === 'lats') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'upper.png'
       }
       else if (input === 'lower_back') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'lower.png'
       }
       else if (input === 'middle_back') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'upper.png'
       }
       else if (input === 'neck') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'upper.png'
       }
       else if (input === 'traps') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'upper.png'
       }
       else if (input === 'triceps') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'triceps.png'
       }
       else if (input === 'glutes') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'glutes.png'
       }
       else if (input === 'forearms') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'forearm.png'
       }
       else if (input === 'calves') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'calf.png'
       }
       else if (input === 'abductors') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'glutes.png'
       }
       else if (input === 'adductors') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'glutes.png'
       }
       else if (input === 'abdominals') {
+        document.querySelector('img').setAttribute("style", "margin-top: 20%;margin-left: 80px;width: 88%;height: 100%;")
         document.querySelector('img').src = 'abs.png'
       } else { return }
 
@@ -83,6 +98,7 @@ function makeReq(){
    
         let ul = document.getElementById('workoutInfo')
         let li = document.createElement('li')
+        li.setAttribute("style", "list-style: none; width: 85%; font-size: 1.3em; border: 1px solid lightgray; padding: 5px; margin: 10px; text-align: left;")
 
 
         let icon = document.createElement("i")

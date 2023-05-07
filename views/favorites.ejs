@@ -20,11 +20,11 @@
         <h1 class="text-center">FAVORITES</h1>
         <!-- LOCAL INFORMATION -->
         <div class="col-sm-12">
-            <div class="favs well">
+            <div class="favs">
                 
               <ul class="messages">
               <% for(let i=0; i<fav.length; i++) {%>
-                <li class="message"><span type="text"><%= fav[i].favorite %> <i class="fa-solid fa-xmark"></i></span></li>
+                <li class="favorite"><span type="text"><%= fav[i].favorite %> <i class="fa-solid fa-xmark"></i></span></li>
               <% } %>
               </ul>
             </div>
